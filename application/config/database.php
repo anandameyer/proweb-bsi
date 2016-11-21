@@ -75,9 +75,12 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql4.000webhost.com',
-	'username' => 'a6885431_proweb',
-	'password' => 'shutdownin10',
+	#'hostname' => 'mysql4.000webhost.com',
+	'hostname' => 'localhost',
+	#'username' => 'a6885431_proweb',
+	'username' => 'root',
+	#'password' => 'shutdownin10',
+	'password' => '',
 	'database' => 'a6885431_proweb',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
