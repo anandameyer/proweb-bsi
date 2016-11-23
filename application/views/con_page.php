@@ -36,10 +36,10 @@
 
                 <hr>
 
-                <!-- Preview Image -->
-                <!--<img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <!--Preview Image-->
+                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
 
-                <hr>-->
+                <hr>
 
                 <!-- Post Content -->
                 <p class="lead"><?php echo $row->content;?></p>

@@ -8,6 +8,8 @@ class Editor extends CI_Controller {
     // Call the CI_Model constructor
     parent::__construct();
     $this->load->database();
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
   }
 
   
@@ -23,19 +25,20 @@ class Editor extends CI_Controller {
 	public function insertData()
 	{
      date_default_timezone_set('Asia/Jakarta');
-		 $data = $this->input->post();
+	 $data = $this->input->post();
      $date = date("Y-m-d");
 
     	$query = array(
         'tag' => $data['tag'],
       	'title' => $data['title'],
       	'content' => $data['content'],
-        'Dtime' => $date
+        'Dtime' => $date,
+        'url' => $data['url']
       	);
 
     $this->load->model('SiteData');
     $this->SiteData->pushData($query);
-    $this->load->view('editor');
+    //$this->load->view('editor');
 	}
 
 	public function updateData($id)

@@ -15,7 +15,7 @@ class Content extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('navigator');
-		$this->load->view('con_page');
+		$this->load->view('page_editor');
 		$this->load->view('footer');
 	}
 	public function get_news($id)

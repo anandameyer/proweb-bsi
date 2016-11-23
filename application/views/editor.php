@@ -16,9 +16,7 @@
     <!-- here Script For Page -->
     <script src="<?php echo base_url('assets/js/jquery-1.12.3.js');?>"></script>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-    <!--<script src="<?php //echo base_url('assets/tinymce/jquery.tinymce.min.js');?>"></script>-->
     <script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
-    <!--<script src="<?php //echo base_url('assets/tinymce/tinymce.min.js');?>"></script>-->
     <script src="<?php echo base_url('assets/js/editor.js');?>"></script>
 </head>
 <body>
@@ -30,24 +28,26 @@
 				<div class="panel-body">
 					<form id = "editor" role = "form" method="POST" action="<?php echo site_url('Editor/insertData');?>">
 						<div class="form-group">
-							<label>News Title</label>
-							<input id = "title" name="title" class="form-control" placeholder="Put your News Title Here ...">
+    						<label>News Title</label>
+    						<input id = "title" name="title" class="form-control" placeholder="Put your News Title Here ...">
 						</div>
-            <div class="form-group">
-              <label for="sel1">Categories</label>
-              <select class="form-control" id="tag" name="tag">
-                <option>News</option>
-                <option>Technology</option>
-                <option>Microcontroler</option>
-                <option>Idea</option>
-              </select>
-            </div>
+                        <div class="form-group">
+                              <label>Categories</label>
+                              <select class="form-control" id="tag" name="tag">
+                                <option>News</option>
+                                <option>Technology</option>
+                                <option>Microcontroler</option>
+                                <option>Idea</option>
+                              </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" name="file"/>
+                        </div>
 						<div class="form-group">
 							<textarea class="form-control" id="content" name="content"></textarea>
 						</div>
 						<div class="form-group">
 							<button id="submit" type="submit" class="btn btn-primary">Submit</button>
-							<!--<button id="clear" type="" class="btn btn-danger">Clear</button>-->
 						</div>
             <div class="well">
                     <h4>Edit News</h4>
@@ -63,10 +63,6 @@
                     </div>
                 </div>
 					</form>
-                <form id="gambar" style="display:none" enctype="multipart/form-data" method="POST" action="<?php echo site_url('administrator/Upload')?>">
-                      <input type="file" name="file"/>
-                      <button class="btn btn-primary" type="submit" value="file">Submit</button>
-                </form>
 				</div>
 			</div>
 		</div>

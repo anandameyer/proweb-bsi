@@ -25,14 +25,11 @@ class Uploader extends CI_Controller {
                 $this->load->library('upload', $config);
                 if($this->upload->do_upload('file'))
                 {
-                    //return site_url('Dasboard/form');
-                    echo "file upload success";
-                }
-                else
-                {
-                    //return;
-                    echo "file upload failed";
-                    //echo $this->upload->display_errors('<p>', '</p>');
+                    $data = $this->upload->data();
+                    $this -> output -> set_header("Pragma: no-cache");
+                    $this -> output -> set_header("Access-Control-Allow-Origin: *");
+                    $this -> output -> set_header("Cache-Control: no-store, no-cache");
+                    $this -> output -> set_content_type('application/json') -> set_output(json_encode($data));
                 };
 
         }
