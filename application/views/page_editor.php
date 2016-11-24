@@ -53,6 +53,21 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="well">
+                    <h4>Edit News</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                            <?php foreach ($result as $row) {?>
+                                <li class="changeable">
+                                </li>
+                                <?php };?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <form id="upGambar" enctype="multipart/form-data"><input type="file" name="file" id="gambar" style="display: none;"></form>
 
@@ -102,14 +117,7 @@
                 url:"<?php echo site_url('Editor/insertData');?>",
                 type:"POST",
                 crossDomain: true,
-                //headers: { 'Access-Control-Allow-Origin':'*' ,
-                //'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE',
-                //'Access-Control-Allow-Headers':'Authorization'},
-                //beforeSend: function(xhr){xhr.setRequestHeader('Access-Control-Allow-Origin', '*');},
                 data:fData,
-                //processData: false,
-                //contentType: false,
-                //cache: false,
                 success: function(){
                     console.log("success");
                 }

@@ -34,10 +34,17 @@ class Content extends CI_Controller {
 	{
 		$this->load->model('SiteData');
 		$data['result'] = $this->SiteData->getBytag($tag);
-		
 		$this->load->view('header');
 		$this->load->view('navigator');
 		$this->load->view('news_tag',$data);
 		$this->load->view('footer');
+	}
+
+	public function get_all_news()
+	{
+		$tag = "news";
+		$this->load->model('SiteData');
+		$data['result'] = $this->SiteData->getBytag($tag);
+		$this->load->view('editor',$data);
 	}
 }

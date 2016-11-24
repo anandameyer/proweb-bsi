@@ -21,7 +21,7 @@ class SiteData extends CI_Model {
         {
                 $query = $this->db->query
                 (
-                        'SELECT title,content,id
+                        'SELECT *
                         FROM news 
                         ORDER BY id 
                         DESC 
@@ -32,7 +32,7 @@ class SiteData extends CI_Model {
         }
         public function getByid($id)
         {
-                $sql = 'SELECT title,content,Dtime
+                $sql = 'SELECT *
                         FROM news 
                         WHERE id = ?';
                 $query = $this->db->query($sql,array($id));
