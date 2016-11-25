@@ -28,17 +28,20 @@ class Editor extends CI_Controller {
 	 $data = $this->input->post();
      $date = date("Y-m-d");
 
+     $user = $this->session->username;
+     $this->load->model('SiteData');
+     $id = $this->SiteData->getUserID($user);
+
     	$query = array(
         'tag' => $data['tag'],
       	'title' => $data['title'],
       	'content' => $data['content'],
         'Dtime' => $date,
-        'url' => $data['url']
+        'url' => $data['url'],
+        'user' => $id
       	);
 
-    $this->load->model('SiteData');
     $this->SiteData->pushData($query);
-    //$this->load->view('editor');
 	}
 
 	public function updateData($id)
@@ -46,11 +49,11 @@ class Editor extends CI_Controller {
 		$data = $this->input->post();
 		$this->load->model('SiteData');
 		$this->SiteData->updateData($id,$data);
-    $this->index();
+    	$this->index();
 	}
 	public function getNews($id)
 	{
-    $data['id'] = $id;
+    	$data['id'] = $id;
 		$this->load->model('SiteData');
 		$data['result'] = $this->SiteData->getByid($id);
 		$this->load->view('updater',$data);

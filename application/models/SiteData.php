@@ -60,7 +60,7 @@ class SiteData extends CI_Model {
                         WHERE username = ?
                         AND password = ?
                         ';
-                $query = $this->db->query($sql,array('username'=>$data['username'],'password'=>$data['password']));
+                $query = $this->db->query($sql,array('username'=>$data['username'],'password '=> $data['password']));
                 if($query->num_row()>0)
                 {
                         return true;
@@ -69,6 +69,16 @@ class SiteData extends CI_Model {
                 {
                         return false;
                 }
+        }
+
+        public function getUserID($user)
+        {
+                $sql = 'SELECT id
+                        FROM login
+                        WHERE username = ?';
+                $query = $this->db->query($sql,$user);
+                $result = $query->result();
+                return $result;
         }
 
 
