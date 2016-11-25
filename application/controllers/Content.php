@@ -48,3 +48,4 @@ class Content extends CI_Controller {
 		$this->load->view('editor',$data);
 	}
 }
+?>

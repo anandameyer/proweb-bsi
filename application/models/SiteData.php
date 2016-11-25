@@ -53,6 +53,24 @@ class SiteData extends CI_Model {
                 $this->db->update('news',$data,array('id'=>$id));
         }
 
+        public function loginData($data)
+        {
+                $sql = 'SELECT *
+                        FROM login
+                        WHERE username = ?
+                        AND password = ?
+                        ';
+                $query = $this->db->query($sql,array('username'=>$data['username'],'password'=>$data['password']));
+                if($query->num_row()>0)
+                {
+                        return true;
+                }
+                else
+                {
+                        return false;
+                }
+        }
+
 
 }
 
